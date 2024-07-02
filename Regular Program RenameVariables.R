@@ -1,0 +1,9 @@
+library(readr)
+regularProgram <- read_csv("New folder/regularProgram.csv")
+View(regularProgram)
+View(regularProgram)
+library(dplyr)
+regularProgram <- regularProgram %>% mutate(cod_dosis = case_when(cod_dosis == "111"~"Unica", cod_dosis == "1"~"1ra", cod_dosis == "2"~"2da", cod_dosis == "3"~"3ra", cod_dosis == "4"~"4ta", cod_dosis == "22"~"2do refuerzo", cod_dosis == "11"~"1er refuerzo", cod_dosis == "33"~"3er refuerzo", cod_dosis == "5"~"5ta"))
+regularProgram <- regularProgram %>% mutate(cod_vac= case_when(cod_vac == "1"~"BCG", cod_vac == "2"~"bOPV", cod_vac == "3"~ "DPT", cod_vac == "4"~"DT", cod_vac =="5"~"HEPATITIS B", cod_vac == "6"~"INFLUENZA", cod_vac == "7"~"IPV", cod_vac == "8"~"MENINGOCOCO", cod_vac == "9"~"NEUMOCOCO", cod_vac == "10"~"PENTAVALENTE", cod_vac == "11"~"ROTAVIRUS", cod_vac == "12"~"SR", cod_vac == "13"~"SRP", cod_vac == "14"~"TDAP", cod_vac== "15"~"VPH", cod_vac == "16"~"TD-ADULTO", cod_vac == "17"~"COLERA", cod_vac == "18"~"FIEBRE AMARILLA", cod_vac =="19"~"MONKEY POX"))
+regularProgram <- regularProgram %>% mutate(id_grupo = case_when(id_grupo == "X1"~ "Recien Nacido", id_grupo == "X2"~ "Menor de 1 ano", id_grupo == "X3"~"1 año", id_grupo == "X4"~"1 a 4 años", id_grupo == "X5"~"2 a 5 años", id_grupo == "X6"~"5 a 6 años", id_grupo == "X7"~"5 a 8 años", id_grupo == "X8"~"9 a 14 años", id_grupo == "X9"~"15 a 49 años", id_grupo == "X10"~"9 años", id_grupo == "X11"~"10 años", id_grupo == "X12"~"11 años", id_grupo == "X13"~"12 años", id_grupo == "X14"~"13 años", id_grupo == "X15"~"14 años", id_grupo == "X16"~"15 años", id_grupo == "X17"~ "Embarazadas", id_grupo == "X18"~"Mujeres en edad fertil (15-49 años", id_grupo == "X19"~"Hombres (15-49 años", id_grupo == "X20"~"Adultos 50 años y mas", id_grupo == "X21"~"Adultos Mayores de 65 años", id_grupo == "X22"~"18 a 49 años", id_grupo == "X23"~"1 a 59 años", id_grupo == "X24"~"2 meses o más", id_grupo == "X25"~"18-65 años"))
+
